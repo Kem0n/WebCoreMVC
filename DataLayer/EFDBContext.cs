@@ -20,7 +20,7 @@ namespace DataLayer
         public EFDBContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<EFDBContext>();
-            optionsBuilder.UseSqlServer("Source Data=(localdb)\\MSSQLLocalDB;Initial Database=loftBlog;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False", b=>b.MigrationsAssembly("DataLayer"));
+            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Database=loftBlog;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False", b=>b.MigrationsAssembly("DataLayer"));
             return new EFDBContext(optionsBuilder.Options);
         }
     }
